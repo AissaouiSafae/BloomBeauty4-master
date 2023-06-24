@@ -18,6 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 // Cette classe  contient plusieurs beans de configuration pour la sécurité de l'application
 public class ApplicationConfig {
+
     private final UserRepository userRepository;
     // userDetailsService récupère les détails de l'utilisateur à partir du UserRepository
     // en utilisant l'adresse e-mail comme identifiant.

@@ -30,7 +30,6 @@ public class AuthenticationService {
         var user = User.builder()
                 .NomComplet(request.getNomComplet())
                 .tel(request.getTel())
-                .AdressPostal(request.getAdressPostal())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .ERole(ERole.CLIENT)
@@ -49,7 +48,7 @@ public class AuthenticationService {
         var user = User.builder()
                 .NomComplet(request.getNomComplet())
                 .tel(request.getTel())
-                .AdressPostal(request.getAdressPostal())
+
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .ERole(ERole.ADMIN)

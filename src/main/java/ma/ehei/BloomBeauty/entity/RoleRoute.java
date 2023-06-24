@@ -17,12 +17,15 @@ public class RoleRoute {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "Routes_id")
+    @JoinColumn(name = "routes_id")
     private Routes routes;
 
     @ManyToOne
-    @JoinColumn(name = "Roles_id")
+    @JoinColumn(name = "roles_id")
     private Roles roles;
+
+
+
 
 
 }

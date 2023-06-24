@@ -1,10 +1,13 @@
 package ma.ehei.BloomBeauty.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ma.ehei.BloomBeauty.DTO.User;
 import ma.ehei.BloomBeauty.entity.RoleRoute;
+import org.hibernate.mapping.Set;
 
 
 import java.util.List;
@@ -26,12 +29,22 @@ public class Routes {
     @Column(length = 50)
     private String titre;
 
-
-    @Column(nullable = false)
-    private  int  priorite;
-
-
-    @OneToMany(mappedBy = "routes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "routes", cascade = CascadeType.MERGE)
+    @JsonIgnoreProperties("routes")
     private List<RoleRoute> roleRoutes;
+    @ManyToOne
+    @JoinColumn(name = "routes")
+    @JsonIgnoreProperties("users")
+    private User user;
+
+
+
+
+
+    /*@ManyToMany(mappedBy = "Routes")
+    private List<Roles> roles;
+*/
+
+
 
 }

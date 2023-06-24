@@ -45,8 +45,11 @@ public class Utilisateur {
     private List<AdressLivrason> adressLivrasons;
 
     @ManyToOne
-    @JoinColumn(name = "roles_id")
+    @JoinColumn(name = "RolesId")
     private Roles roles;
-}
 
+
+
+
+}
 

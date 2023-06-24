@@ -1,15 +1,20 @@
 package ma.ehei.BloomBeauty.DTO;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ma.ehei.BloomBeauty.entity.RoleRoute;
+import ma.ehei.BloomBeauty.entity.Roles;
+import ma.ehei.BloomBeauty.entity.Routes;
 import ma.ehei.BloomBeauty.enumiration.ERole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.util.RouteMatcher;
 
 import java.util.Collection;
 import java.util.List;
@@ -31,9 +36,17 @@ public class User implements UserDetails
     private Long id;
     private String NomComplet;
     private String tel;
-    private String AdressPostal;
 
     private String email ;
+
+
+
+    @OneToMany(mappedBy = "users", cascade = CascadeType.MERGE)
+    @JsonIgnoreProperties("users")
+    private List<Routes> routes;
+    @OneToOne(mappedBy = "users")
+    private Roles role;
+
 
 
 

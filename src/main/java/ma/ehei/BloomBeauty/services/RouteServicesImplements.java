@@ -28,7 +28,7 @@ public class RouteServicesImplements implements RoutesServices {
                 .map(ctl -> {
                     ctl.setRouteKey(routes.getRouteKey());
                     ctl.setTitre(routes.getTitre());
-                    ctl.setPriorite(routes.getPriorite());
+
                     return routesRepository.save(ctl);
                 })
                 .orElseThrow(() -> new RuntimeException("Route introuvable"));

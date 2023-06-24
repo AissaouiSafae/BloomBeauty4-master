@@ -1,5 +1,6 @@
 package ma.ehei.BloomBeauty.services;
 
+import ma.ehei.BloomBeauty.DTO.User;
 import ma.ehei.BloomBeauty.entity.Utilisateur;
 
 import java.util.List;

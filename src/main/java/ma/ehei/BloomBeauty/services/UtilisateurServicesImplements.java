@@ -34,6 +34,7 @@ public class UtilisateurServicesImplements implements UtilisateurServices{
                     ctl.setEmail(utilisateur.getEmail());
                     ctl.setPassWord(utilisateur.getPassWord());
                     ctl.setLogin(utilisateur.getLogin());
+                    utilisateurRepository.save(ctl);
                     return utilisateur;
 
 
